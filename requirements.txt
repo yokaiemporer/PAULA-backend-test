@@ -5,7 +5,7 @@ Sklearn==0.0
 Folium==0.10.1
 Scipy==1.0.1
 Flask==0.12.2
-
+gunicorn==19.7.1
 # absl-py==0.7.0
 # adodbapi==2.6.0.7
 # alabaster==0.7.10
