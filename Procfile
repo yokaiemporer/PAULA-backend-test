@@ -1,1 +1,1 @@
-web:plotdt.py
+web:gunicorn wsgi:app 

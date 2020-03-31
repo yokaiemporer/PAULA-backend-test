@@ -14,7 +14,7 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 CORS(app)
 
-with open('../data/location_history_102014.json') as f:
+with open('./location_history_102014.json') as f:
     data = json.load(f)
 
 
@@ -68,11 +68,11 @@ print(ans)
 print(ans[0][0], ans[0][1])
 
 
-@app.route('*', methods=['GET'])
+@app.route('/', methods=['GET'])
 def home():
     apiloc = {
         "Latitude": ans[0][1],
         "Longitude": ans[0][0]
     }
     return jsonify(apiloc)
-app.run()
+# app.run()
