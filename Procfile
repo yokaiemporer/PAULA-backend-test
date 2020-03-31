@@ -1,1 +1,1 @@
-web:python plotdt.py
+web:plotdt.py
