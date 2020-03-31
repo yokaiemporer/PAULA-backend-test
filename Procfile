@@ -1,1 +1,1 @@
-web: gunicorn plotdt:app 
+web:gunicorn plotdt:app 
