@@ -183,7 +183,6 @@ partd==0.3.8
 passlib==1.7.1
 Paste==2.0.3
 PasteDeploy==1.5.2
-pathlib2==2.3.0
 PAULA-Backend-tools==0.9b0
 pbr==3.1.1
 pep8==1.7.1
