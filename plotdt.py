@@ -68,7 +68,7 @@ print(ans)
 print(ans[0][0], ans[0][1])
 
 
-@app.route('/getLocation', methods=['GET'])
+@app.route('/', methods=['GET'])
 def home():
     apiloc = {
         "Latitude": ans[0][1],
