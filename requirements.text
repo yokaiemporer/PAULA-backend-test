@@ -239,6 +239,7 @@ python-novaclient==10.1.0
 python-swiftclient==3.5.0
 pytz==2018.9
 PyWavelets==0.5.2
+pywin32==224
 pywinpty==0.5.5
 PyYAML==3.12
 pyzmq==17.0.0
