@@ -8,7 +8,7 @@ from sklearn import tree
 import json
 import flask
 from flask import request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS,cross_origin
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -66,9 +66,12 @@ print(test)
 ans = clf.predict([test])
 print(ans)
 print(ans[0][0], ans[0][1])
+@app.route("/")
+def main():
+    return "Welcome1"
 
-
-@app.route('/', methods=['GET'])
+@app.route('/loc')
+@cross_origin(origin='*',headers=['Content- Type'])
 def home():
     apiloc = {
         "Latitude": ans[0][1],
