@@ -1,1 +1,1 @@
-web : waitress-serve wsgi.py  
+web : waitress-serve wsgi:app 
