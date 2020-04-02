@@ -78,8 +78,9 @@ def home():
         "Longitude": ans[0][0]
     }
     return jsonify(apiloc)
-# app.run()
-from waitress import serve
-import os
-port = int(os.environ.get('PORT', 5000))
-serve(app, host='localhost', port=port)
+if __name__ == "__main__":
+    app.run()
+# from waitress import serve
+# import os
+# port = int(os.environ.get('PORT', 5000))
+# serve(app, host='localhost', port=port)

@@ -101,13 +101,22 @@ def series_to_supervised(data, n_in=1):
 
 if args.verbose:print("Converting and building Model... ")
 values = centroids
+
+
 data,label = series_to_supervised(values, 3)
+
 clf=tree.DecisionTreeRegressor()
+
 nsamples, nx, ny = data.shape
 d2_train_dataset = data.reshape((nsamples,nx*ny))
 x=d2_train_dataset
+
 y=label
+
 clf=clf.fit(x,y)
+
+
+
 if args.verbose:
   print("model built!")
   print("test input is",x[7])
@@ -116,13 +125,17 @@ filename = 'finalized_model2.sav'
 pickle.dump(clf, open(filename, 'wb'))
 if args.verbose:print("Model saved.")
 clf=pickle.load(open(filename, 'rb'))
+
 testput=[[-3.6286064 , 40.4212548] , [-3.62863389, 40.42133821],[ -3.62858095, 40.4212467]]
 test=np.array(testput).flatten()
+
 if args.verbose:print("test input is",test)
 ans=clf.predict([test])
 if args.verbose:print("predicted answer is",ans)
 coordinates= centroids
 if args.storeResults:f=open("a2.out","w");f.write(str(centroids))
+
+
 if args.showPlot:
   import matplotlib.pyplot as plt
   import pandas as pd
@@ -135,11 +148,11 @@ if args.showPlot:
   N = len(cluster_labels)
   x, y = LAT,LONG
   scatter = ax.scatter(x, y, c=RGB)
-  legend1 = ax.legend(*scatter.legend_elements(),
-                    loc="lower left", title="Classes")
-  ax.add_artist(legend1)
-  handles, labels = scatter.legend_elements(prop="sizes", alpha=0.6)
-  legend2 = ax.legend(handles, labels, loc="upper right", title="Sizes")
+  # legend1 = ax.legend(*scatter.legend_elements(),
+  #                   loc="lower left", title="Classes")
+  # ax.add_artist(legend1)
+  # handles, labels = scatter.legend_elements(prop="sizes", alpha=0.6)
+  # legend2 = ax.legend(handles, labels, loc="upper right", title="Sizes")
   plt.show()
 @app.route('/getLocation', methods=['GET'])
 def home():
