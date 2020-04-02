@@ -1,1 +1,1 @@
-web : waitress-serve plotdt:app 
+web : gunicorn wsgi:app
